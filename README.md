@@ -3,7 +3,7 @@ L’objectif du projet est de tester un Framework de développement et de s'entr
 
 ## Le projet
 
-Tu feras une mini application avec une seule page. ```A rendre pour le 22/08 23h42 !```
+Tu feras une mini application avec une seule page. ```A rendre pour le 22/09 23h42 !```
 
 Celle-ci sera de type Guest book" (livre d’or) dans lequel une personne est capable d’ajouter une appréciation, un nombre d'étoiles (de 1 à 5) ainsi que son identité (nom et prénom).
 
