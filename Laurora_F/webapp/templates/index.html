@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Guest Book</title>
+</head>
+
+<body>
+
+	<style>
+		.card {
+		box-shadow: 0 0 10px 0 rgba(100, 100, 100, 0.26);
+		}   
+	</style>
+    <div class="container" style="max-width: 25rem;">
+
+	<nav class="navbar navbar-light bg-light">
+		<a class="navbar-brand" href="">
+		{% load static %}
+		<img src="{% static "images/book.jpeg" %}" width="30" height="30" class="d-inline-block align-top" alt=""> Guest Book</a>
+    </nav>
+
+
+    </br>
+    <div align="center">
+        <div class="card bg-light mb-3" style="max-width: 27rem;">
+			{% load static %}
+			<img class="card-img-top" src="{% static "images/john.jpeg" %}">
+			<div class="card-body">
+				<h5 class="card-title">John Smith</h5>
+				<p class="card-text">Yo!!! This evening was crazy we'll see you soon.</p>
+            </div>
+		</div>
+        <div class="card bg-light mb-3" style="max-width: 27rem;">
+			{% load static %}
+			<img class="card-img-top" src="{% static "images/gloria.jpeg" %}">
+			<div class="card-body">
+				<h5 class="card-title">Gloria Hunter</h5>
+				<p class="card-text">Hey Congratulations.</p>
+            </div>
+		</div>
+    
+
+
+    </br>
+    <p>Leave a note!</p>
+    <hr>
+    
+    {% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <p>
+                <label for="id_name">Full Name</label>
+                <input id="id_name" class="form-control" type="text" name="name" maxlength="20" required="">
+            </p>
+            <p>
+                <label for="id_stars">Stars*/5</label>
+                <input id="id_stars" class="form-control" type="text" name="stars" maxlength="5" required="">
+            </p>
+            <p>
+                <label for="id_body">Text</label>
+                <textarea id="id_body" class="form-control" name="body" cols="40" rows="10" required=""></textarea>
+            </p>
+        </div>
+        <input class="btn btn-primary btn-block" type="submit" value="Post"/>
+
+        
+    </form>
+    {% endblock %}
+    </div>
+	</div>
+	</br>
+	
+</body>
+</html>
