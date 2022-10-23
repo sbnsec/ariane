@@ -31,6 +31,7 @@
 			<img class="card-img-top" src="{% static "images/john.jpeg" %}">
 			<div class="card-body">
 				<h5 class="card-title">John Smith</h5>
+                <p class="card-text">Stars : 5/5</p>
 				<p class="card-text">Yo!!! This evening was crazy we'll see you soon.</p>
             </div>
 		</div>
@@ -39,6 +40,7 @@
 			<img class="card-img-top" src="{% static "images/gloria.jpeg" %}">
 			<div class="card-body">
 				<h5 class="card-title">Gloria Hunter</h5>
+                <p class="card-text">Stars : 4/5</p>
 				<p class="card-text">Hey Congratulations.</p>
             </div>
 		</div>
@@ -48,8 +50,11 @@
     </br>
     <p>Leave a note!</p>
     <hr>
-    
+
+
     {% block content %}
+
+
     <form method="post">
         {% csrf_token %}
         <div class="form-group">
@@ -58,8 +63,8 @@
                 <input id="id_name" class="form-control" type="text" name="name" maxlength="20" required="">
             </p>
             <p>
-                <label for="id_stars">Stars*/5</label>
-                <input id="id_stars" class="form-control" type="text" name="stars" maxlength="5" required="">
+                <label for="id_stars">Stars/5</label>
+                <input id="id_stars" class="form-control" type="text" name="stars" maxlength="3" required="">
             </p>
             <p>
                 <label for="id_body">Text</label>
@@ -68,7 +73,6 @@
         </div>
         <input class="btn btn-primary btn-block" type="submit" value="Post"/>
 
-        
     </form>
     {% endblock %}
     </div>
